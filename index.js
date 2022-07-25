@@ -33,11 +33,17 @@ app.get('/', (req, res) => res.render('index', {
 const {
     loginUser
 } = require('./routes/api/logIn')
-
+// const {
+//     getAllList
+// } = require('./routes/api/todos')
 // Members API Routes
 app.use('/api/members', require('./routes/api/members'))
-//Users
+// Users
 app.post('/login', loginUser);
+
+// List
+app.use('/list', require('./routes/api/todos'));
+
 const PORT = process.env.PORT || 5005;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

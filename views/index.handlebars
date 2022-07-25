@@ -1,4 +1,5 @@
 <h1 class="text-center mb-3">{{title}}</h1>
+<h4>Sign Up</h4>
 <form action="/api/members" method="POST" class="mb-4">
 
     <div class="form-group">
@@ -11,7 +12,7 @@
     </div>
     <input type="submit" value="Add Member" class="btn btn-primary btn-block">
 </form>
-
+<h4>Login</h4>
 <form action="/login" method="POST" class="mb-4">
   <div class="form-group">
     <label for="email">Email address</label>
@@ -27,6 +28,15 @@
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<form action="/list" method="GET" class="mb-4">
+  <div class="form-group">
+    <label for="userId">Example label</label>
+    <input type="text" class="form-control" name="userId" placeholder="Example input">
+  </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
 </form>
 <h4>Members</h4>
  
