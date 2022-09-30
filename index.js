@@ -2,7 +2,8 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const exphbs = require('express-handlebars');
-const logger = require('./middleware/logger');
+
+const { registerUser, loginUser, getMe } = require('./backend/controllers/memberController')
 
 const members = require('./Members');
 // const { loginUser } = require("./routes/api/logIn");
@@ -30,20 +31,21 @@ app.get('/', (req, res) => res.render('index', {
     title: 'Member App',
     members
 }));
-const {
-    loginUser
-} = require('./routes/api/logIn')
+// const {
+//     loginUser
+// } = require('./routes/api/logIn')
 // const {
 //     getAllList
 // } = require('./routes/api/todos')
 // Members API Routes
-app.use('/api/members', require('./routes/api/members'))
+app.use('/api/members', require('./backend/routes/api/members'))
 // Users
-app.post('/login', loginUser);
+// app.post('/login', loginUser);
 
 // List
-app.use('/list', require('./routes/api/todos'));
+app.use('/list', require('./backend/routes/api/todos'));
 
 const PORT = process.env.PORT || 5005;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+

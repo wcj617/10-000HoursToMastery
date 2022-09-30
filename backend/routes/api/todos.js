@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const lists = require("../../List");
+const lists = require("../../../List");
 
 router.get('', (req, res) => {
     const found = lists.some(list => list.userId === req.query.userId);

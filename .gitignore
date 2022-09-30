@@ -1,2 +1,4 @@
 # Dependency directories
+.history/
 node_modules/
+.env

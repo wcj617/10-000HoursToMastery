@@ -5,7 +5,7 @@
 
 const { validateLoginData } = require('../util/validators');
 
-const members = require("../../Members");
+const members = require("../../../Members");
 
 exports.loginUser = (request, response) => {
     const lmember = {
